@@ -10,10 +10,10 @@ interface Migration {
 const migrations: Migration[] = []
 
 // Import all migration files in order
-import * as m001 from './001_initial'
-import * as m003 from './003_media_url'
-import * as m002 from './002_auth'
-import {difference} from "../lib";
+import * as m001 from './001_initial.ts'
+import * as m003 from './003_media_url.ts'
+import * as m002 from './002_auth.ts'
+import {difference} from "../src/lib";
 
 migrations.push(m001 as unknown as Migration)
 migrations.push(m003 as unknown as Migration)

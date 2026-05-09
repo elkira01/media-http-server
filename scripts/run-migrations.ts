@@ -1,7 +1,7 @@
 import { Database } from 'bun:sqlite'
 import { mkdirSync } from 'node:fs'
 import { join } from 'node:path'
-import { runMigrations } from '../src/migrations'
+import { runMigrations } from '../migrations'
 import {parseArgs} from "util";
 
 const DATA_DIR = join(process.cwd(), 'data')

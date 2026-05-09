@@ -1,7 +1,7 @@
 import { readdirSync, writeFileSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const MIGRATIONS_DIR = join(import.meta.dir, '..', 'src', 'migrations')
+const MIGRATIONS_DIR = join(import.meta.dir, '..', 'migrations')
 const INDEX_PATH = join(MIGRATIONS_DIR, 'index.ts')
 
 const name = process.argv[2]
