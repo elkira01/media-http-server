@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "build": "bun build src/index.ts --outdir dist --target bun",
-    "start": "bun run dist/index.js"
+    "start": "bun run dist/index.js",
+    "make-migration": "bun run scripts/create-migration.ts",
+    "migrate": "bun run scripts/run-migrations.ts"
   },
   "dependencies": {
     "hono": "^4.12.18"

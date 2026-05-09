@@ -3,6 +3,8 @@ services:
     build: .
     ports:
       - "3000:3000"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET is required}
     volumes:
       - app-data:/app/data
     restart: unless-stopped

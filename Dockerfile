@@ -15,9 +15,14 @@ COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile --production
 
 COPY --from=build /app/dist/index.js ./dist/index.js
+COPY src/migrations/ ./src/migrations/
+COPY scripts/run-migrations.ts ./scripts/run-migrations.ts
+COPY docker-entrypoint.sh ./
+
+RUN chmod +x docker-entrypoint.sh
 
 VOLUME /app/data
 
 EXPOSE 3000
 
-CMD ["bun", "run", "dist/index.js"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
