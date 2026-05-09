@@ -37,3 +37,7 @@ export function up(db: Database) {
   db.run('CREATE INDEX IF NOT EXISTS idx_media_type ON media(media_type)')
   db.run('CREATE INDEX IF NOT EXISTS idx_media_created ON media(created_at)')
 }
+
+export function down(db: Database) {
+}
+

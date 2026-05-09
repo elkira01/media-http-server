@@ -28,3 +28,7 @@ export function up(db: Database) {
   db.run('CREATE INDEX IF NOT EXISTS idx_refresh_tokens_user ON refresh_tokens(user_id)')
   db.run('CREATE INDEX IF NOT EXISTS idx_refresh_tokens_hash ON refresh_tokens(token_hash)')
 }
+
+export function down(db: Database) {
+}
+

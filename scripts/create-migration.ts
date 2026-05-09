@@ -30,6 +30,10 @@ export const description = '${name.replace(/_/g, ' ')}'
 export function up(db: Database) {
   // TODO: write migration
 }
+
+export function down(db: Database) {
+  // TODO: write migration
+}
 `
 
 writeFileSync(filepath, template)
