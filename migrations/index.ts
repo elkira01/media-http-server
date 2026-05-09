@@ -70,7 +70,7 @@ export function runMigrations(db: Database, from?: number, to?: number) {
 export function revertMigrations(db: Database, depth: number = 1) {
   const appliedMigrations = db.query('SELECT version as v, applied_at as date FROM schema_migrations').all() as Array<{ v: number, date: string }>
 
-  if (depth && !((appliedMigrations ?? []).length > depth)) {
+  if (depth && (appliedMigrations ?? []).length < depth) {
     throw new Error(`Invalid migration depth: --depth = ${depth}`)
   }
 
